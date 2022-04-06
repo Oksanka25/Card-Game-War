@@ -11,17 +11,18 @@ It is a browser ineractive game which objective is to win all of the cards.
 
 ## MVP Goals
 - Create buttons Start Game and Reset Game.
+- Have a full deck and have it divided in half between 2 players when the game starts.
 - Open 1 card from the player's deck on click.
 - Compare Player 1 and Player 2 cards.
 - Move both cards to the deck of the player with higher card.
-- In case of war (a tie) each player adds 3 cards unopened and 1 opened.
+- In case of war (a tie) each player adds 4 cards.
 - Have a winner and end the game when 1 player has a full deck. 
 
 ## Stretch Goals
-- Have a full deck and have it divided in half between 2 players when the game starts.
 - Create a war layout(different back ground in case of war).
 - Add a track how many wars each player won.
 - Show the number of cards in the each player's deck.
+- In case of war each player adds 3 cards unopened and 1 opened.
 
 ## Stretch Goal ++
 - Have a computer as a Player 1 
