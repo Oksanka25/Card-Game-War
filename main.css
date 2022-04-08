@@ -1,3 +1,56 @@
 .table {
     border: 10px solid darkgreen;
+    width:900px;
+    height: 600px;
+    border-radius: 200px;
+    background-color: green;
+    margin-top: 30px;
+    margin-left: 50px ;
+}
+.row1 {
+    /* border: 1px solid black; */
+    height: 110px;
+    position: relative;
+    left: 120px;
+    margin: 10px;
+    margin-bottom: 50px;
+}
+.row2 {
+    /* border: 1px solid black; */
+    height: 110px;
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.row3 {
+    /* border: 1px solid black; */
+    height: 110px;
+    position: relative;
+    left: 120px;
+    margin: 10px;
+  
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 15px;
+    height: 110px;
+    width: 70px;
+    background-color: wheat;
+    font-size: 20px;
+    font-weight: 200px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: inline-block;
+
+}
+
+.comparison {
+    margin-right: 400px;
+}
+
+h2 {
+    text-align: center;
 }
