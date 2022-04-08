@@ -49,10 +49,12 @@
 
 .comparison {
     margin-right: 50px;
+    margin-left: 100px;
 }
 
 .message {
-    margin-right: 100px;
+    margin-right: 50px;
+    margin-left: 10px;
 }
 
 h2 {

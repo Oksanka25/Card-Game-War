@@ -1,9 +1,10 @@
 const suits = ["♦️", "♥️", "♠️", "♣️"];
-const values = ["6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+const values = [6, 7, 8, 9, 10, "J", "Q", "K", "A"];
 let deck = [];
 let player1Stack = [];
 let player2Stack = [];
 let start = document.querySelector(".start");
+let reset = document.querySelector(".reset");
 let gameOn = true;
 let fullDeck = document.querySelector(".full-deck");
 let stack1 = document.querySelector(".stack1");
@@ -11,25 +12,38 @@ let stack2 = document.querySelector(".stack2");
 let p1Card = document.querySelector(".player1");
 let p2Card = document.querySelector(".player2");
 let message = document.querySelector(".message");
+let playedCard1, playedCard2
 
-
-
+let myValues = {
+    6: 6,
+    7: 7,
+    8: 8,
+    9: 9,
+    10: 10,
+    J: 11,
+    Q: 12,
+    K: 13,
+    A: 14,
+};
 
 class Card {
-    constructor(suit, value) {
+    constructor(suit, rank, value) {
         this.suit = suit;
         this.value = value;
+        this.rank = rank;
     }
 }
 function generateDeck() {
     for (let i = 0; i < suits.length; i++) {
         for (let j = 0; j < values.length; j++)
-            deck.push(new Card(suits[i], values[j]))
+            deck.push(new Card(suits[i], values[j], myValues[values[j]]))
     }
     fullDeck.innerText = deck.length
     message.innerHTML = "Click Start Game to play"
 }
 generateDeck();
+
+console.log(deck);
 
 // fullDeck.innerText = (deck[0].suit + deck[0].value);
 
@@ -55,25 +69,33 @@ function splitDeck() {
 // console.log(player2Stack, player1Stack);
 
 stack1.addEventListener("click", () => {
-    for (let i = 0; i < player1Stack.length; i++) {
-        let j = (Math.floor(Math.random() * player1Stack.length));
-        let temp = player1Stack[i];
-        player1Stack[i] = player1Stack[j];
-        player1Stack[j] = temp;
-        p1Card.innerText = (player1Stack[j].suit + player1Stack[j].value)
-
-    }
-    message.innerHTML = "Player 2: Your move"
+    // for (let i = 0; i < player1Stack.length; i++) {
+    //     let j = (Math.floor(Math.random() * player1Stack.length));
+    //     let temp = player1Stack[i];
+    //     player1Stack[i] = player1Stack[j];
+    //     player1Stack[j] = temp;
+    //     p1Card.innerText = (player1Stack[j].suit + player1Stack[j].rank)
+    //     player1Stack.pop(player1Stack[j]);
+    //     stack1.innerHTML = player1Stack.length;
+    // }
+    playedCard1 = player1Stack.shift()
+    p1Card.innerHTML = playedCard1.suit + playedCard1.rank;
+    stack1.innerText = player1Stack.length;
+    console.log(playedCard1);
+    message.innerHTML = "Player 2 move"
 })
 
 stack2.addEventListener("click", () => {
-    for (let i = 0; i < player2Stack.length; i++) {
-        let j = (Math.floor(Math.random() * player2Stack.length));
-        let temp = player2Stack[i];
-        player2Stack[i] = player2Stack[j];
-        player2Stack[j] = temp;
-        p2Card.innerText = (player1Stack[j].suit + player2Stack[j].value)
-    }
+    // for (let i = 0; i < player2Stack.length; i++) {
+    //     let j = (Math.floor(Math.random() * player2Stack.length));
+    //     let temp = player2Stack[i];
+    //     player2Stack[i] = player2Stack[j];
+    //     player2Stack[j] = temp;
+    //     p2Card.innerText = (player1Stack[j].suit + player2Stack[j].rank)
+    // }
+    playedCard2 = player2Stack.shift()
+    p2Card.innerHTML = playedCard2.suit + playedCard2.rank;
+    stack2.innerText = player2Stack.length;
     comparison()
 })
 
@@ -81,9 +103,14 @@ stack2.addEventListener("click", () => {
 start.addEventListener("click", () => {
     if (gameOn === true) {
         shuffleDeck(); splitDeck();
+        console.log(player1Stack);
     } else {
-        ///message
+        message.innerHTML = "The game has already started";
     }
+})
+
+reset.addEventListener("click", () => {
+    document.location.reload();
 })
 
 function shuffleDeck() {
@@ -97,12 +124,19 @@ function shuffleDeck() {
 }
 
 function comparison() {
-    if (p1Card.value > p2Card.value) {
-        player1Stack.push(p1Card + p2Card);
 
-    } else if (p1Card.value < p2Card.value) {
-        player2Stack.push(p1Card + p2Card)
+    if (playedCard1.value > playedCard2.value) {
+        player1Stack.push(playedCard1, playedCard2);
+        message.innerHTML = "Player 1 has a higher card"
+        stack1.innerText = player1Stack.length;
+
+    } else if (playedCard1.value < playedCard2.value) {
+        player2Stack.push(playedCard1, playedCard2);
+        message.innerHTML = "Player 2 has a higher card"
+        stack2.innerText = player2Stack.length;
     } else {
-        console.log("bla");
+        message.innerHTML = "It is a war. Add 4 more cards"
+        war();
     }
 }
+
