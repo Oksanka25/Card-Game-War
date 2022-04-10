@@ -12,7 +12,8 @@ let stack2 = document.querySelector(".stack2");
 let p1Card = document.querySelector(".player1");
 let p2Card = document.querySelector(".player2");
 let message = document.querySelector(".message");
-let playedCard1, playedCard2
+let rules = document.querySelector(".rules");
+let playedCard1, playedCard2, player
 
 let myValues = {
     6: 6,
@@ -96,7 +97,15 @@ stack2.addEventListener("click", () => {
     playedCard2 = player2Stack.shift()
     p2Card.innerHTML = playedCard2.suit + playedCard2.rank;
     stack2.innerText = player2Stack.length;
-    comparison()
+    comparison();
+})
+
+rules.addEventListener("click", () => {
+    if (gameOn === true) {
+        window.open("http://127.0.0.1:5502/rules.html", "popUpWindow", "height=500, width=600, left=200, top=300, location=no");
+    } else {
+        console.log("bla");
+    }
 })
 
 
@@ -123,20 +132,36 @@ function shuffleDeck() {
     console.log(deck);
 }
 
-function comparison() {
-
+function comparison(event) {
+    // event.preventDefault()
     if (playedCard1.value > playedCard2.value) {
         player1Stack.push(playedCard1, playedCard2);
         message.innerHTML = "Player 1 has a higher card"
         stack1.innerText = player1Stack.length;
+        // p1Card.innerHTML = "";
+        // p2Card.innerHTML = "";
 
     } else if (playedCard1.value < playedCard2.value) {
         player2Stack.push(playedCard1, playedCard2);
         message.innerHTML = "Player 2 has a higher card"
         stack2.innerText = player2Stack.length;
+        // p1Card.innerHTML = "";
+        // p2Card.innerHTML = "";
+
     } else {
         message.innerHTML = "It is a war. Add 4 more cards"
         war();
+    }
+
+}
+
+function war() {
+    if (playedCard1.value[3] > playedCard2.value[3]) {
+        player1Stack.push(playedCard1, playedCard2);
+        message.innerHTML = "Player 1 won the war"
+        stack1.innerText = player1Stack.length;
+    } else {
+        message.innerHTML = "Player 2 won the war";
     }
 }
 

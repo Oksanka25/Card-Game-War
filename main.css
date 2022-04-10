@@ -6,6 +6,7 @@
     background-color: green;
     margin-top: 30px;
     margin-left: 50px ;
+    
 }
 .row1 {
     /* border: 1px solid black; */
@@ -59,4 +60,13 @@
 
 h2 {
     text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.textrules {
+    background-color: bisque;
+    font-family:Georgia, 'Times New Roman', Times, serif
 }
