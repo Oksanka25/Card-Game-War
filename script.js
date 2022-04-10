@@ -100,13 +100,13 @@ stack2.addEventListener("click", () => {
     comparison();
 })
 
-rules.addEventListener("click", () => {
-    if (gameOn === true) {
-        window.open("http://127.0.0.1:5502/rules.html", "popUpWindow", "height=500, width=600, left=200, top=300, location=no");
-    } else {
-        console.log("bla");
-    }
-})
+// rules.addEventListener("click", () => {
+//     if (gameOn === true) {
+//         window.open("http://127.0.0.1:5502/rules.html", "popUpWindow", "height=500, width=600, left=200, top=300, location=no");
+//     } else {
+//         console.log("bla");
+//     }
+// })
 
 
 start.addEventListener("click", () => {
