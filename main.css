@@ -6,9 +6,16 @@ h1 {
     font-size: 40px;
 }
 
-h2 {
+.players {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    background-color: antiquewhite;
+    display: inline-block;
+    margin-left: 400px;
+    padding: 5px;
+    border: 5px;
+    border-radius: 10px;
 }
 
 nav {
@@ -56,6 +63,7 @@ nav {
     position: relative;
     left: 120px;
     margin: 10px;
+    margin-bottom: 7%;
   
 }
 
@@ -69,25 +77,25 @@ nav {
     font-weight: 200px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: inline-block;
-    background-image: url("background.png");
+    background-image: url("card_background.png");
     background-size: cover;
 }
 
 .full-deck {
-    background-image: url("background.png");
+    background-image: url("card_background.png");
     background-size: cover;
     min-width: 70px;
 }
 
 .stack1, .stack2 {
-    background-image: url("background.png");
+    background-image: url("card_background.png");
     background-size: cover;
     margin-left: 100px;
 }
 
 .stack2 {
     margin-left: 300px;
-    /* margin-bottom: 100px; */
+    margin-bottom: 200px;
 }
 
 .stack1:hover, .stack2:hover{
@@ -104,16 +112,26 @@ nav {
 }
 
 .message {
-    margin-right: 50px;
-    margin-left: 10px;
+    margin-right: 40px;
+    margin-left: 20px;
     font-size: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(240, 240, 205);
+    border-radius: 10px;
 }
 
 .player1, .player2 {
     margin-right: 20px;
 }
+/* .player1 {
+    margin-top: 30px;
+}
+.player2 {
+    margin-bottom: 40px;
+} */
 
 .button {
     margin: 10px;
