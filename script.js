@@ -51,10 +51,6 @@ function generateDeck() {
 }
 generateDeck();
 
-// console.log(deck);
-
-// fullDeck.innerText = (deck[0].suit + deck[0].value);
-
 
 function splitDeck() {
     for (let i = 0; i < deck.length / 2; i++) {
