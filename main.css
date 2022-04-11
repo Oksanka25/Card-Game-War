@@ -77,18 +77,18 @@ nav {
     font-weight: 200px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: inline-block;
-    background-image: url("card_background.png");
+    background-image: url("Images/card_background.png");
     background-size: cover;
 }
 
 .full-deck {
-    background-image: url("card_background.png");
+    background-image: url("Images/card_background.png");
     background-size: cover;
     min-width: 70px;
 }
 
 .stack1, .stack2 {
-    background-image: url("card_background.png");
+    background-image: url("Images/card_background.png");
     background-size: cover;
     margin-left: 100px;
 }
