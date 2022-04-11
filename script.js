@@ -178,10 +178,10 @@ function warcomparison() {
         message.innerHTML = "Player 2 has a higher card and won a war. Player 1, your move is next";
         stack2.innerText = player2Stack.length;
 
-        // } 
-        // else if (warPlayedCard1[3].value === warPlayedCard2[3].value) {
-        //     console.log("war #2");
-        //     war();
+    }
+    else if (warPlayedCard1[3].value === warPlayedCard2[3].value) {
+        console.log("war #2");
+        war();
     } else {
         console.log("baaad");
     }
@@ -200,6 +200,3 @@ function gameOver() {
 
 gameOver();
 
-// var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-// var removed = arr.splice(2, 3);
-// console.log(removed);
