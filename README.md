@@ -33,7 +33,8 @@ It is a browser interactive game which objective is to win all of the cards. Eac
 
 War is a browser based game that has many variations and rules. This version is the most standard one with 2 Players and the winner who has managed to collect all the cards during the game. This game is created using Javascript, HTML and CSS.
 
-<img width="932" alt="image" src="https://user-images.githubusercontent.com/101350351/162034883-0dfcd8d7-9dbe-497a-bf9d-86e9aeb72344.png">
+<img width="1029" alt="image" src="https://user-images.githubusercontent.com/101350351/162832094-2f5f89b0-5ddc-4397-81cd-c6a797db8388.png">
+
 
 
 ## MVP Wireframes
@@ -47,17 +48,21 @@ There are 3 buttons on the right side of the game field:
 - Reset Game: this button will start the game all over (even in the middle if the current game),  so the main deck is full again and Player needs to press Start Game to start a game.
 - Rules: this button will invoke a pop up window with the rules of the game. 
 
-![photo_2022-04-06 12 28 47](https://user-images.githubusercontent.com/101350351/162023088-310ea4dd-471f-4243-bafb-b43b35834d94.jpeg)
+<img width="856" alt="image" src="https://user-images.githubusercontent.com/101350351/162832608-bddc20f3-c53d-41a1-9839-d4a4b45f5fde.png">
+
+<img width="982" alt="image" src="https://user-images.githubusercontent.com/101350351/162834854-b24231c7-61e2-4222-8448-133951a3be84.png">
+
+
+
 
 ## Game Section
 The game has 4 sections:
-- Full deck of cards (36): When the game starts, 18 cards go to each player.
+- Full deck of cards (52): When the game starts, 26 cards go to each player.
 - Player 1 section and their cards: When Player receives their stack of cards, they can click on it and 1 card should be taken off his stack and opened in the comparison section.
 - Player 2 section and their cards: After Player 1 clicked on their stack and opened 1 card, Player 2 can do the same.
 - Comparison section: When both Players clicked on their card stacks, 2 cards should show up in the comparison section. Player with the higher card takes those 2 cards from the comparison section. If 2 cards in a comparison section match, it is a war and each player has to click on their deck 4 times to add 3 cards face down and 1 (the last one) face up. And 2 of these last cards should be compared.
 
-
-![photo_2022-04-06 12 49 22](https://user-images.githubusercontent.com/101350351/162026475-4558a6f0-3c7b-48c3-b4c2-d7249968e9d9.jpeg)
+<img width="994" alt="image" src="https://user-images.githubusercontent.com/101350351/162834601-966554a0-40c2-4bad-8f34-d08f6f740afb.png">
 
 ## The End of The Game
 
@@ -67,7 +72,11 @@ Once the Game is completed another window will pop up that will display who is a
 
 ## Unsolved Problems
 
+The problem that remains unsolved for now is the ability of the players to see the process how they add their cards (4) during the war.
 
 ## Future Goals and Implementations
 
+- Computerise Player 1;
+- Make moving cards more visual;
+- Keep track of wins and loses for each player.
 
