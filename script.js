@@ -72,6 +72,7 @@ function splitDeck() {
 stack1.addEventListener("click", () => {
     playedCard1 = player1Stack.shift()
     p1Card.innerHTML = playedCard1.suit + playedCard1.rank;
+    stack1.style.backgroundImage = "url(https://openclipart.org/image/400px/180064)";
     stack1.innerText = player1Stack.length;
     console.log(playedCard1);
     message.innerHTML = "Player 2, click on your stack to make a move"
@@ -80,6 +81,7 @@ stack1.addEventListener("click", () => {
 stack2.addEventListener("click", () => {
     playedCard2 = player2Stack.shift()
     p2Card.innerHTML = playedCard2.suit + playedCard2.rank;
+    stack2.style.backgroundImage = "url(https://openclipart.org/image/400px/143575)";
     stack2.innerText = player2Stack.length;
     console.log(playedCard2);
     comparison();
@@ -185,6 +187,18 @@ function warcomparison() {
     }
 }
 
+
+function gameOver() {
+    if (stack1 === null) {
+        message.innerHTML = "Player 1 Won! Game Over!";
+    } else if (stack2 === null) {
+        message.innerHTML = "Player 2 Won! Game Over!";
+    } else {
+        console.log("problem");
+    }
+}
+
+gameOver();
 
 // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 // var removed = arr.splice(2, 3);

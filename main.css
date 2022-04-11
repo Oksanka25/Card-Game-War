@@ -84,6 +84,11 @@ nav {
     margin-left: 100px;
 }
 
+.stack2 {
+    margin-left: 300px;
+    /* margin-bottom: 100px; */
+}
+
 .stack1:hover, .stack2:hover{
     border: 2px solid blue;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
