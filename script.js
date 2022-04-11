@@ -1,7 +1,5 @@
 const suits = ["♦️", "♥️", "♠️", "♣️"];
-const values = [
-    // 2, 3, 4, 5, 6, 7, 8,
-    9, 10, "J", "Q", "K", "A"];
+const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
 let deck = [];
 let player1Stack = [];
 let player2Stack = [];
@@ -21,13 +19,13 @@ let isInWar = false;
 let player1Turn = true;
 
 let myValues = {
-    // 2: 2,
-    // 3: 3,
-    // 4: 4,
-    // 5: 5,
-    // 6: 6,
-    // 7: 7,
-    // 8: 8,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
     9: 9,
     10: 10,
     J: 11,
@@ -64,7 +62,7 @@ function splitDeck() {
     }
     stack1.innerText = player1Stack.length;
 
-    for (let i = 12; i < deck.length; i++) {
+    for (let i = 26; i < deck.length; i++) {
         player2Stack.push(deck[i]);
     }
     stack2.innerText = player2Stack.length;
