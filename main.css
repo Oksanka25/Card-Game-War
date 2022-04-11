@@ -76,6 +76,7 @@ nav {
 .full-deck {
     background-image: url("background.png");
     background-size: cover;
+    min-width: 70px;
 }
 
 .stack1, .stack2 {

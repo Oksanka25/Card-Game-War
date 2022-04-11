@@ -6,6 +6,7 @@ let player2Stack = [];
 let start = document.querySelector(".start");
 let reset = document.querySelector(".reset");
 let gameOn = true;
+let isInWar = false;
 let fullDeck = document.querySelector(".full-deck");
 let stack1 = document.querySelector(".stack1");
 let stack2 = document.querySelector(".stack2");
@@ -44,7 +45,7 @@ function generateDeck() {
 }
 generateDeck();
 
-console.log(deck);
+// console.log(deck);
 
 // fullDeck.innerText = (deck[0].suit + deck[0].value);
 
@@ -70,21 +71,52 @@ function splitDeck() {
 // console.log(player2Stack, player1Stack);
 
 stack1.addEventListener("click", () => {
-    playedCard1 = player1Stack.shift()
-    p1Card.innerHTML = playedCard1.suit + playedCard1.rank;
-    stack1.style.backgroundImage = "url(https://openclipart.org/image/400px/180064)";
-    stack1.innerText = player1Stack.length;
-    console.log(playedCard1);
-    message.innerHTML = "Player 2, click on your stack to make a move"
+    if (isInWar === false) {
+        playedCard1 = player1Stack.shift()
+        p2Card.innerText = "";
+        p1Card.innerText = "";
+        p1Card.innerHTML = playedCard1.suit + playedCard1.rank;
+        stack1.style.backgroundImage = "url(https://openclipart.org/image/400px/180064)";
+        stack1.innerText = player1Stack.length;
+        // console.log(playedCard1);
+        message.innerHTML = "Player 2, click on your stack to make a move";
+    } else if (isInWar === true) {
+        console.log(player1Stack);
+        warPlayedCard1 = player1Stack.splice(0, 4);
+        console.log(player1Stack);
+        console.log(warPlayedCard1);
+        p1Card.innerHTML = warPlayedCard1[3].suit + warPlayedCard1[3].rank;
+        // console.log(player1Stack.length);
+        // console.log(player1Stack);
+        stack1.innerText = player1Stack.length;
+        message.innerHTML = "Player 2, click your stack to add 4 more cards"
+        console.log("Player 2, click your stack to add 4 more cards")
+    } else {
+        console.log("bla");
+    }
 })
 
 stack2.addEventListener("click", () => {
-    playedCard2 = player2Stack.shift()
-    p2Card.innerHTML = playedCard2.suit + playedCard2.rank;
-    stack2.style.backgroundImage = "url(https://openclipart.org/image/400px/143575)";
-    stack2.innerText = player2Stack.length;
-    console.log(playedCard2);
-    comparison();
+    if (isInWar === false) {
+        playedCard2 = player2Stack.shift()
+        p2Card.innerHTML = playedCard2.suit + playedCard2.rank;
+        stack2.style.backgroundImage = "url(https://openclipart.org/image/400px/143575)";
+        stack2.innerText = player2Stack.length;
+        // console.log(playedCard2);
+        comparison();
+    } else if (isInWar === true) {
+        console.log(player2Stack);
+        warPlayedCard2 = player2Stack.splice(0, 4);
+        console.log(player2Stack);
+        console.log(warPlayedCard2);
+        p2Card.innerHTML = warPlayedCard2[3].suit + warPlayedCard2[3].rank;
+        // console.log(player2Stack.length);
+        // console.log(player2Stack);
+        stack2.innerText = player2Stack.length;
+        warcomparison();
+    } else {
+        console.log("bla bla");
+    }
 })
 
 
@@ -93,7 +125,7 @@ rules.addEventListener("click", () => {
     if (gameOn === true) {
         window.open("http://127.0.0.1:5502/rules.html", "popUpWindow", "height=500, width=600, left=200, top=300, location=no");
     } else {
-        console.log("bla");
+        // console.log("bla");
     }
 })
 
@@ -101,7 +133,7 @@ rules.addEventListener("click", () => {
 start.addEventListener("click", () => {
     if (gameOn === true) {
         shuffleDeck(); splitDeck();
-        console.log(player1Stack);
+        // console.log(player1Stack);
     } else {
         message.innerHTML = "The game has already started";
     }
@@ -118,70 +150,65 @@ function shuffleDeck() {
         deck[i] = deck[j];
         deck[j] = temp;
     }
-    console.log(deck);
+    // console.log(deck);
 }
 
 function comparison(event) {
     // event.preventDefault()
     if (playedCard1.value > playedCard2.value) {
+        console.log(player1Stack);
         player1Stack.push(playedCard1, playedCard2);
+        console.log(player1Stack);
+        // p2Card.innerText = "";
+        // p1Card.innerText = "";
         message.innerHTML = "Player 1 has a higher card. Player 1, your move is next";
         stack1.innerText = player1Stack.length;
-        // p1Card.innerHTML = "";
-        // p2Card.innerHTML = "";
 
     } else if (playedCard1.value < playedCard2.value) {
+        console.log(player2Stack);
         player2Stack.push(playedCard1, playedCard2);
+        console.log(player2Stack);
+        // p2Card.innerText = "";
+        // p1Card.innerText = "";
         message.innerHTML = "Player 2 has a higher card. Player 1, your move is next";
         stack2.innerText = player2Stack.length;
-        // p1Card.innerHTML = "";
-        // p2Card.innerHTML = "";
 
     } else {
-        message.innerHTML = "It is a war. Player 1, click your stack to add 4 more cards"
-        war();
+        message.innerHTML = "It is a war. Player 1, click your stack to add 4 more cards";
+        isInWar = true;
     }
-
 }
 
 let warPlayedCard1 = [];
 let warPlayedCard2 = [];
 
-function war() {
-    stack1.addEventListener("click", () => {
-        warPlayedCard1 = player1Stack.splice(1, 4);
-        p1Card.innerHTML = warPlayedCard1[3].suit + warPlayedCard1[3].rank;
-        stack1.innerText = player1Stack.length;
-        message.innerHTML = "Player 2, click your stack to add 4 more cards"
-        console.log(warPlayedCard1);
-    })
-    stack2.addEventListener("click", () => {
-        warPlayedCard2 = player2Stack.splice(1, 4);
-        p2Card.innerHTML = warPlayedCard2[3].suit + warPlayedCard2[3].rank;
-        stack2.innerText = player2Stack.length;
-        console.log(warPlayedCard2);
-        warcomparison();
-    });
-
-}
-
-
 function warcomparison() {
 
     if (warPlayedCard1[3].value > warPlayedCard2[3].value) {
-        player1Stack.push(warPlayedCard1, warPlayedCard2);
+        console.log(warPlayedCard1, warPlayedCard2);
+        player1Stack.push(warPlayedCard1[0], warPlayedCard1[1], warPlayedCard1[2], warPlayedCard1[3], warPlayedCard2[0], warPlayedCard2[1], warPlayedCard2[2], warPlayedCard2[3]);
+        // player1Stack.push(warPlayedCard1, warPlayedCard2);
         message.innerHTML = "Player 1 has a higher card and won a war. Player 1, your move is next";
         stack1.innerText = player1Stack.length;
+        isInWar = false;
+        return;
 
     } else if (warPlayedCard1[3].value < warPlayedCard2[3].value) {
-        player2Stack.push(warPlayedCard1, warPlayedCard2);
+        console.log(warPlayedCard1, warPlayedCard2);
+        player2Stack.push(warPlayedCard1[0], warPlayedCard1[1], warPlayedCard1[2], warPlayedCard1[3], warPlayedCard2[0], warPlayedCard2[1], warPlayedCard2[2], warPlayedCard2[3]);
+        // player2Stack.push(warPlayedCard1, warPlayedCard2);
         message.innerHTML = "Player 2 has a higher card and won a war. Player 1, your move is next";
         stack2.innerText = player2Stack.length;
+        isInWar = false;
+        return;
 
     }
     else if (warPlayedCard1[3].value === warPlayedCard2[3].value) {
+        console.log(warPlayedCard1, warPlayedCard2);
+        message.innerHTML = "It is a war again. Player 1, click your stack to add 4 more cards"
         console.log("war #2");
-        war();
+        // war();
+
     } else {
         console.log("baaad");
     }
@@ -189,10 +216,10 @@ function warcomparison() {
 
 
 function gameOver() {
-    if (stack1 === null) {
-        message.innerHTML = "Player 1 Won! Game Over!";
-    } else if (stack2 === null) {
-        message.innerHTML = "Player 2 Won! Game Over!";
+    if (stack1.length === 0) {
+        message.innerHTML = "Game Over! Player 2 Won!";
+    } else if (stack2.length === 0) {
+        message.innerHTML = "Game Over! Player 1 Won!";
     } else {
         console.log("problem");
     }
