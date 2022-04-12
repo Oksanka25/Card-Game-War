@@ -48,10 +48,7 @@ There are 3 buttons on the right side of the game field:
 - Reset Game: this button will start the game all over (even in the middle if the current game),  so the main deck is full again and Player needs to press Start Game to start a game.
 - Rules: this button will invoke a pop up window with the rules of the game. 
 
-<img width="856" alt="image" src="https://user-images.githubusercontent.com/101350351/162832608-bddc20f3-c53d-41a1-9839-d4a4b45f5fde.png">
-
-<img width="982" alt="image" src="https://user-images.githubusercontent.com/101350351/162834854-b24231c7-61e2-4222-8448-133951a3be84.png">
-
+<img width="983" alt="image" src="https://user-images.githubusercontent.com/101350351/163031071-ba0a023d-1137-447d-b4c4-59bce7a2d9dd.png">
 
 
 
@@ -68,11 +65,13 @@ The game has 4 sections:
 
 Once the Game is completed another window will pop up that will display who is a winner and will offer to Play again
 
-![image](https://user-images.githubusercontent.com/101350351/162034180-61f31db2-8375-4a3e-a73d-e258d5e9a6ab.png)
+![image](https://user-images.githubusercontent.com/101350351/163031169-74c61247-a405-4164-a7e2-01dacaa56a35.png)
+
 
 ## Unsolved Problems
 
 The problem that remains unsolved for now is the ability of the players to see the process how they add their cards (4) during the war.
+A mobile version is not set up yet. 
 
 ## Future Goals and Implementations
 
