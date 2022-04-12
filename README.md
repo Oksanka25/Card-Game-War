@@ -65,7 +65,7 @@ The game has 4 sections:
 
 Once the Game is completed another window will pop up that will display who is a winner and will offer to Play again
 
-![image](https://user-images.githubusercontent.com/101350351/163031169-74c61247-a405-4164-a7e2-01dacaa56a35.png)
+<img width="947" alt="image" src="https://user-images.githubusercontent.com/101350351/163052446-05be943a-baa5-4d24-8517-0d5e771b7eac.png">
 
 
 ## Unsolved Problems
