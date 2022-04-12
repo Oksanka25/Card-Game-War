@@ -135,7 +135,8 @@ const openRules = () => {
 };
 
 const closeRules = () => {
-    modal.style.display = "none"
+    modal.style.display = "none";
+    console.log("close");
 }
 openBtn.addEventListener("click", openRules)
 closeBtn.addEventListener("click", closeRules)
