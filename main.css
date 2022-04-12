@@ -76,7 +76,7 @@ body {
     background-color: antiquewhite;
     display: inline-block;
     margin-left: 400px;
-    padding: 5px;
+    padding: 6.5px;
     border: 5px;
     border-radius: 10px;
 }
@@ -87,9 +87,7 @@ body {
     height: 600px;
     border-radius: 200px;
     background-color: rgb(29, 99, 29);
-    margin: 30px auto ;
-    /* margin-top: 30px;
-    margin-left: 50px ; */
+    margin: 30px auto;
 }
 
 .row1 {

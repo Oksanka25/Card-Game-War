@@ -38,6 +38,8 @@ let myValues = {
     A: 14,
 };
 
+// Manipulations with the deck
+
 class Card {
     constructor(suit, rank, value) {
         this.suit = suit;
@@ -55,6 +57,14 @@ function generateDeck() {
 }
 generateDeck();
 
+function shuffleDeck() {
+    for (let i = 0; i < deck.length; i++) {
+        let j = (Math.floor(Math.random() * deck.length));
+        let temp = deck[i];
+        deck[i] = deck[j];
+        deck[j] = temp;
+    }
+}
 
 function splitDeck() {
     for (let i = 0; i < deck.length / 2; i++) {
@@ -73,6 +83,8 @@ function splitDeck() {
     message.innerHTML = " Player 1, click on your stack to make a move"
 
 }
+
+//Main game - adding cards to the center and comparison
 
 stack1.addEventListener("click", () => {
     if (player1Turn === true) {
@@ -124,6 +136,9 @@ stack2.addEventListener("click", () => {
     gameOver();
 })
 
+
+// Buttons 
+
 const openRules = () => {
     modal.style.display = "block";
 };
@@ -149,14 +164,7 @@ reset.addEventListener("click", () => {
     document.location.reload();
 })
 
-function shuffleDeck() {
-    for (let i = 0; i < deck.length; i++) {
-        let j = (Math.floor(Math.random() * deck.length));
-        let temp = deck[i];
-        deck[i] = deck[j];
-        deck[j] = temp;
-    }
-}
+// Comparison values of the cards in the battle
 
 function comparison() {
     if (playedCard1.value > playedCard2.value) {
@@ -175,6 +183,8 @@ function comparison() {
         table.style.backgroundImage = "url(Images/camouflage_table.png)";
     }
 }
+
+// Comparison cards in the war
 
 function warcomparison() {
 
@@ -204,6 +214,7 @@ function warcomparison() {
     }
 }
 
+// End of game and result
 
 function gameOver() {
     if (isInWar === true) {
