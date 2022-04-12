@@ -48,9 +48,7 @@ There are 3 buttons on the right side of the game field:
 - Reset Game: this button will start the game all over (even in the middle if the current game),  so the main deck is full again and Player needs to press Start Game to start a game.
 - Rules: this button will invoke a pop up window with the rules of the game. 
 
-<img width="983" alt="image" src="https://user-images.githubusercontent.com/101350351/163031071-ba0a023d-1137-447d-b4c4-59bce7a2d9dd.png">
-
-
+<img width="1079" alt="image" src="https://user-images.githubusercontent.com/101350351/163057071-b812e04d-8808-4e78-aee4-b7108d3d2499.png">
 
 ## Game Section
 The game has 4 sections:
@@ -58,8 +56,9 @@ The game has 4 sections:
 - Player 1 section and their cards: When Player receives their stack of cards, they can click on it and 1 card should be taken off his stack and opened in the comparison section.
 - Player 2 section and their cards: After Player 1 clicked on their stack and opened 1 card, Player 2 can do the same.
 - Comparison section: When both Players clicked on their card stacks, 2 cards should show up in the comparison section. Player with the higher card takes those 2 cards from the comparison section. If 2 cards in a comparison section match, it is a war and each player has to click on their deck 4 times to add 3 cards face down and 1 (the last one) face up. And 2 of these last cards should be compared.
+- 
+<img width="948" alt="image" src="https://user-images.githubusercontent.com/101350351/163052730-587a383e-529a-43a4-9335-b3addcaca29f.png">
 
-<img width="994" alt="image" src="https://user-images.githubusercontent.com/101350351/162834601-966554a0-40c2-4bad-8f34-d08f6f740afb.png">
 
 ## The End of The Game
 
