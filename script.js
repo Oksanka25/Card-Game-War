@@ -3,16 +3,18 @@ const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
 let deck = [];
 let player1Stack = [];
 let player2Stack = [];
-let start = document.querySelector(".start");
-let reset = document.querySelector(".reset");
-let fullDeck = document.querySelector(".full-deck");
-let stack1 = document.querySelector(".stack1");
-let stack2 = document.querySelector(".stack2");
-let p1Card = document.querySelector(".player1");
-let p2Card = document.querySelector(".player2");
-let message = document.querySelector(".message");
-let rules = document.querySelector(".rules");
-let table = document.querySelector(".table")
+const start = document.querySelector(".start");
+const reset = document.querySelector(".reset");
+const fullDeck = document.querySelector(".full-deck");
+const stack1 = document.querySelector(".stack1");
+const stack2 = document.querySelector(".stack2");
+const p1Card = document.querySelector(".player1");
+const p2Card = document.querySelector(".player2");
+const message = document.querySelector(".message");
+const table = document.querySelector(".table")
+const openBtn = document.getElementById("openModal");
+const modal = document.getElementById('modal')
+const closeBtn = document.getElementById('close')
 let playedCard1, playedCard2, player
 let gameOn = true;
 let isInWar = false;
@@ -120,13 +122,23 @@ stack2.addEventListener("click", () => {
 
 
 
-rules.addEventListener("click", () => {
-    if (gameOn === true) {
-        window.open("http://127.0.0.1:5502/rules.html", "popUpWindow", "height=500, width=600, left=200, top=300, location=no");
-    } else {
-        // console.log("bla");
-    }
-})
+// rules.addEventListener("click", () => {
+//     if (gameOn === true) {
+//         window.open("http://127.0.0.1:5502/rules.html", "popUpWindow", "height=500, width=600, left=200, top=300, location=no");
+//     } else {
+//         // console.log("bla");
+//     }
+// })
+
+const openRules = () => {
+    modal.style.display = "block";
+};
+
+const closeRules = () => {
+    modal.style.display = "none"
+}
+openBtn.addEventListener("click", openRules)
+closeBtn.addEventListener("click", closeRules)
 
 
 start.addEventListener("click", () => {
