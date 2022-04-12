@@ -15,8 +15,8 @@ const p2Card = document.querySelector(".player2");
 const message = document.querySelector(".message");
 const table = document.querySelector(".table")
 const openBtn = document.getElementById("openModal");
-const modal = document.getElementById('modal')
-const closeBtn = document.getElementById('close')
+const modal = document.getElementById('modal');
+const closeBtn = document.getElementById('close');
 let playedCard1, playedCard2, player;
 let gameOn = true;
 let isInWar = false;
