@@ -3,6 +3,8 @@ const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
 let deck = [];
 let player1Stack = [];
 let player2Stack = [];
+let warPlayedCard1 = [];
+let warPlayedCard2 = [];
 const start = document.querySelector(".start");
 const reset = document.querySelector(".reset");
 const fullDeck = document.querySelector(".full-deck");
@@ -15,7 +17,7 @@ const table = document.querySelector(".table")
 const openBtn = document.getElementById("openModal");
 const modal = document.getElementById('modal')
 const closeBtn = document.getElementById('close')
-let playedCard1, playedCard2, player
+let playedCard1, playedCard2, player;
 let gameOn = true;
 let isInWar = false;
 let player1Turn = true;
@@ -72,22 +74,24 @@ function splitDeck() {
 
 }
 
-
 stack1.addEventListener("click", () => {
     if (player1Turn === true) {
         if (isInWar === false) {
             playedCard1 = player1Stack.shift();
             p2Card.innerText = "";
             p1Card.innerText = "";
+            p2Card.style.backgroundImage = "url(Images/card_background.png)";
             p1Card.innerHTML = playedCard1.suit + playedCard1.rank;
-            stack1.style.backgroundImage = "url(https://openclipart.org/image/400px/180064)";
+            p1Card.style.backgroundImage = "url(Images/sun.png)";
             stack1.innerText = player1Stack.length;
             message.innerHTML = "Player 2, click on your stack to make a move";
             player1Turn = false;
-            table.style.backgroundImage = "url(https://wallpaperaccess.com/full/1429575.jpg)";
+            table.style.backgroundImage = "url(Images/green_table.png)";
         } else if (isInWar === true) {
             warPlayedCard1 = player1Stack.splice(0, 4);
             p1Card.innerHTML = warPlayedCard1[3].suit + warPlayedCard1[3].rank;
+            p2Card.style.backgroundImage = "url(Images/card_background.png)";
+            p2Card.innerHTML = "";
             stack1.innerText = player1Stack.length;
             message.innerHTML = "Player 2, click your stack to add 4 more cards"
             player1Turn = false;
@@ -95,7 +99,6 @@ stack1.addEventListener("click", () => {
             console.log("Something went wrong");
         }
     }
-    // gameOver();
 })
 
 stack2.addEventListener("click", () => {
@@ -103,13 +106,14 @@ stack2.addEventListener("click", () => {
         if (isInWar === false) {
             playedCard2 = player2Stack.shift()
             p2Card.innerHTML = playedCard2.suit + playedCard2.rank;
-            stack2.style.backgroundImage = "url(https://openclipart.org/image/400px/143575)";
+            p2Card.style.backgroundImage = "url(Images/cloud.png)";
             stack2.innerText = player2Stack.length;
             comparison();
             player1Turn = true;
         } else if (isInWar === true) {
             warPlayedCard2 = player2Stack.splice(0, 4);
             p2Card.innerHTML = warPlayedCard2[3].suit + warPlayedCard2[3].rank;
+            p2Card.style.backgroundImage = "url(Images/cloud.png)";
             stack2.innerText = player2Stack.length;
             warcomparison();
             player1Turn = true;
@@ -119,16 +123,6 @@ stack2.addEventListener("click", () => {
     }
     gameOver();
 })
-
-
-
-// rules.addEventListener("click", () => {
-//     if (gameOn === true) {
-//         window.open("http://127.0.0.1:5502/rules.html", "popUpWindow", "height=500, width=600, left=200, top=300, location=no");
-//     } else {
-//         // console.log("bla");
-//     }
-// })
 
 const openRules = () => {
     modal.style.display = "block";
@@ -144,7 +138,7 @@ closeBtn.addEventListener("click", closeRules)
 
 start.addEventListener("click", () => {
     if (gameOn === true) {
-        table.style.backgroundImage = "url(https://wallpaperaccess.com/full/1429575.jpg)";
+        table.style.backgroundImage = "url(Images/green_table.png)";
         shuffleDeck(); splitDeck();
     } else {
         message.innerHTML = "The game has already started";
@@ -178,12 +172,9 @@ function comparison() {
     } else {
         message.innerHTML = "It is a war. Player 1, click your stack to add 4 more cards";
         isInWar = true;
-        table.style.backgroundImage = "url(https://openclipart.org/image/400px/170127)";
+        table.style.backgroundImage = "url(Images/camouflage_table.png)";
     }
 }
-
-let warPlayedCard1 = [];
-let warPlayedCard2 = [];
 
 function warcomparison() {
 
@@ -207,7 +198,6 @@ function warcomparison() {
     else if (warPlayedCard1[3].value === warPlayedCard2[3].value) {
         message.innerHTML = "It is a war again. Player 1, click your stack to add 4 more cards"
         console.log("war #2");
-        // war();
 
     } else {
         console.log("baaad");
