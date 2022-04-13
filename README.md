@@ -8,6 +8,10 @@ It is a browser interactive game which objective is to win all of the cards. Eac
 
 This game is created using Javascript, HTML and CSS.
 
+## Author
+Oksana Kalyniak
+https://github.com/Oksanka25
+
 ## Getting started
 
 It is a browser game that can be run by any browser on any device that supports a browser.
