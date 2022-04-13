@@ -103,7 +103,7 @@ stack1.addEventListener("click", () => {
             p1Card.innerHTML = playedCard1.suit + playedCard1.rank;
             p1Card.style.backgroundImage = "url(Images/sun.png)";
             stack1.innerText = player1Stack.length;
-            message.innerHTML = "Player 2, click on your stack to make a move";
+            message.innerHTML = "Player II, click on your stack to make a move";
             player1Turn = false;
             table.style.backgroundImage = "url(Images/green_table.png)";
         } else if (isInWar === true) {
@@ -112,7 +112,7 @@ stack1.addEventListener("click", () => {
             p2Card.style.backgroundImage = "url(Images/card_background.png)";
             p2Card.innerHTML = "";
             stack1.innerText = player1Stack.length;
-            message.innerHTML = "Player 2, click your stack to add 4 more cards to the war"
+            message.innerHTML = "Player II, click your stack to add 4 more cards to the war"
             player1Turn = false;
         } else {
             console.log("Something went wrong");
@@ -176,12 +176,12 @@ reset.addEventListener("click", () => {
 function comparison() {
     if (playedCard1.value > playedCard2.value) {
         player1Stack.push(playedCard1, playedCard2);
-        message.innerHTML = "Player 1 wins the battle with the higher card.  Player 1, your move is next";
+        message.innerHTML = "Player I wins the battle with the higher card.  Player 1, your move is next";
         stack1.innerText = player1Stack.length;
 
     } else if (playedCard1.value < playedCard2.value) {
         player2Stack.push(playedCard1, playedCard2);
-        message.innerHTML = "Player 2 wins the battle with the higher card.  Player 1, your move is next";
+        message.innerHTML = "Player II wins the battle with the higher card.  Player 1, your move is next";
         stack2.innerText = player2Stack.length;
 
     } else {
@@ -198,7 +198,7 @@ function warcomparison() {
     if (warPlayedCard1[3].value > warPlayedCard2[3].value) {
         player1Stack.push(warPlayedCard1[0], warPlayedCard1[1], warPlayedCard1[2], warPlayedCard1[3], warPlayedCard2[0], warPlayedCard2[1], warPlayedCard2[2], warPlayedCard2[3]);
         // player1Stack.push(warPlayedCard1, warPlayedCard2);
-        message.innerHTML = "Player 1 has a higher top card and won a war.  Player 1, your move is next";
+        message.innerHTML = "Player I has a higher top card and won a war.  Player 1, your move is next";
         stack1.innerText = player1Stack.length;
         isInWar = false;
         return;
@@ -206,14 +206,14 @@ function warcomparison() {
     } else if (warPlayedCard1[3].value < warPlayedCard2[3].value) {
         player2Stack.push(warPlayedCard1[0], warPlayedCard1[1], warPlayedCard1[2], warPlayedCard1[3], warPlayedCard2[0], warPlayedCard2[1], warPlayedCard2[2], warPlayedCard2[3]);
         // player2Stack.push(warPlayedCard1, warPlayedCard2);
-        message.innerHTML = "Player 2 has a higher top card and won a war.  Player 1, your move is next";
+        message.innerHTML = "Player II has a higher top card and won a war.  Player 1, your move is next";
         stack2.innerText = player2Stack.length;
         isInWar = false;
         return;
 
     }
     else if (warPlayedCard1[3].value === warPlayedCard2[3].value) {
-        message.innerHTML = "It is a war again.  Player 1, click on your stack to add 4 more cards"
+        message.innerHTML = "It is a war again.  Player I, click on your stack to add 4 more cards"
         console.log("war #2");
 
     } else {
@@ -226,17 +226,17 @@ function warcomparison() {
 function gameOver() {
     if (isInWar === true) {
         if (player1Stack.length == 0 || player1Stack.length < 4) {
-            message.innerHTML = "Game Over! Player 2 Won!";
+            message.innerHTML = "Game Over! Player II Won!";
         } else if (player2Stack.length == 0 || player2Stack.length < 4) {
-            message.innerHTML = "Game Over! Player 1 Won!";
+            message.innerHTML = "Game Over! Player I Won!";
         } else {
             console.log("problem1");
         }
     } else {
         if (player1Stack.length == 0) {
-            message.innerHTML = "Game Over! Player 2 Won!";
+            message.innerHTML = "Game Over! Player II Won!";
         } else if (player2Stack.length == 0) {
-            message.innerHTML = "Game Over! Player 1 Won!";
+            message.innerHTML = "Game Over! Player II Won!";
         } else {
             console.log("problem");
         }
