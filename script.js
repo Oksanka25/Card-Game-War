@@ -1,4 +1,4 @@
-const suits = ["♦️", "♥️", "♠️", "♣️"];
+let suits = ["♦️", "♥️", "♠️", "♣️"];
 const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
 let deck = [];
 let player1Stack = [];
@@ -84,6 +84,16 @@ function splitDeck() {
 
 }
 
+//Music
+
+function music() {
+    let gameMusic = new Audio("Music/game.mp3")
+    gameMusic.play();
+    gameMusic.loop = true;
+    gameMusic.playbackRate = 1;
+}
+
+
 //Main game - adding cards to the center and comparison
 
 stack1.addEventListener("click", () => {
@@ -105,7 +115,7 @@ stack1.addEventListener("click", () => {
             p2Card.style.backgroundImage = "url(Images/card_background.png)";
             p2Card.innerHTML = "";
             stack1.innerText = player1Stack.length;
-            message.innerHTML = "Player 2, click your stack to add 4 more cards"
+            message.innerHTML = "Player 2, click your stack to add 4 more cards to the war"
             player1Turn = false;
         } else {
             console.log("Something went wrong");
@@ -154,7 +164,7 @@ closeBtn.addEventListener("click", closeRules)
 start.addEventListener("click", () => {
     if (gameOn === true) {
         table.style.backgroundImage = "url(Images/green_table.png)";
-        shuffleDeck(); splitDeck();
+        music(); shuffleDeck(); splitDeck();
     } else {
         message.innerHTML = "The game has already started";
     }
@@ -169,16 +179,16 @@ reset.addEventListener("click", () => {
 function comparison() {
     if (playedCard1.value > playedCard2.value) {
         player1Stack.push(playedCard1, playedCard2);
-        message.innerHTML = "Player 1 has a higher card. Player 1, your move is next";
+        message.innerHTML = "Player 1 wins the battle with the higher card.  Player 1, your move is next";
         stack1.innerText = player1Stack.length;
 
     } else if (playedCard1.value < playedCard2.value) {
         player2Stack.push(playedCard1, playedCard2);
-        message.innerHTML = "Player 2 has a higher card. Player 1, your move is next";
+        message.innerHTML = "Player 2 wins the battle with the higher card.  Player 1, your move is next";
         stack2.innerText = player2Stack.length;
 
     } else {
-        message.innerHTML = "It is a war. Player 1, click your stack to add 4 more cards";
+        message.innerHTML = "It is a war.  Player 1, click on your stack to add 4 cards to the war";
         isInWar = true;
         table.style.backgroundImage = "url(Images/camouflage_table.png)";
     }
@@ -191,7 +201,7 @@ function warcomparison() {
     if (warPlayedCard1[3].value > warPlayedCard2[3].value) {
         player1Stack.push(warPlayedCard1[0], warPlayedCard1[1], warPlayedCard1[2], warPlayedCard1[3], warPlayedCard2[0], warPlayedCard2[1], warPlayedCard2[2], warPlayedCard2[3]);
         // player1Stack.push(warPlayedCard1, warPlayedCard2);
-        message.innerHTML = "Player 1 has a higher card and won a war. Player 1, your move is next";
+        message.innerHTML = "Player 1 has a higher top card and won a war.  Player 1, your move is next";
         stack1.innerText = player1Stack.length;
         isInWar = false;
         return;
@@ -199,14 +209,14 @@ function warcomparison() {
     } else if (warPlayedCard1[3].value < warPlayedCard2[3].value) {
         player2Stack.push(warPlayedCard1[0], warPlayedCard1[1], warPlayedCard1[2], warPlayedCard1[3], warPlayedCard2[0], warPlayedCard2[1], warPlayedCard2[2], warPlayedCard2[3]);
         // player2Stack.push(warPlayedCard1, warPlayedCard2);
-        message.innerHTML = "Player 2 has a higher card and won a war. Player 1, your move is next";
+        message.innerHTML = "Player 2 has a higher top card and won a war.  Player 1, your move is next";
         stack2.innerText = player2Stack.length;
         isInWar = false;
         return;
 
     }
     else if (warPlayedCard1[3].value === warPlayedCard2[3].value) {
-        message.innerHTML = "It is a war again. Player 1, click your stack to add 4 more cards"
+        message.innerHTML = "It is a war again.  Player 1, click on your stack to add 4 more cards"
         console.log("war #2");
 
     } else {
