@@ -20,7 +20,7 @@ let gameOn = true;
 let isInWar = false;
 let player1Turn = true;
 
-// Cards
+// Cards List
 
 let suits = ["♦️", "♥️", "♠️", "♣️"];
 const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
