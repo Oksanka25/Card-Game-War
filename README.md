@@ -50,8 +50,11 @@ There are 3 buttons on the right side of the game field:
 
 <img width="1079" alt="image" src="https://user-images.githubusercontent.com/101350351/163057071-b812e04d-8808-4e78-aee4-b7108d3d2499.png">
 
-## Game Section
-The game has 4 sections:
+## Getting started & Game Sections
+
+https://oksanka25.github.io/Project-1/
+
+The game consists of 4 sections:
 - Full deck of cards (52): When the game starts, 26 cards go to each player.
 - Player 1 section and their cards: When Player receives their stack of cards, they can click on it and 1 card should be taken off his stack and opened in the comparison section.
 - Player 2 section and their cards: After Player 1 clicked on their stack and opened 1 card, Player 2 can do the same.
@@ -62,9 +65,9 @@ The game has 4 sections:
 
 ## The End of The Game
 
-Once the Game is completed another window will pop up that will display who is a winner and will offer to Play again
+Once the Game is completed another window message will display who is a winner and will offer to Play again
 
-<img width="947" alt="image" src="https://user-images.githubusercontent.com/101350351/163052446-05be943a-baa5-4d24-8517-0d5e771b7eac.png">
+![image](https://user-images.githubusercontent.com/101350351/163185238-04d5dcbb-6ef2-4fb8-af71-6a73dc07dc65.png)
 
 
 ## Unsolved Problems
