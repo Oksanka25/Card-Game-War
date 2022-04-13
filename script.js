@@ -76,12 +76,9 @@ function splitDeck() {
         player2Stack.push(deck[i]);
     }
     stack2.innerText = player2Stack.length;
-
     deck.length = 0;
     fullDeck.innerText = deck.length;
-
     message.innerHTML = " Player 1, click on your stack to make a move"
-
 }
 
 //Music
@@ -144,7 +141,7 @@ stack2.addEventListener("click", () => {
         }
     }
     gameOver();
-})
+});
 
 
 // Buttons 
@@ -172,7 +169,7 @@ start.addEventListener("click", () => {
 
 reset.addEventListener("click", () => {
     document.location.reload();
-})
+});
 
 // Comparison values of the cards in the battle
 
@@ -192,7 +189,7 @@ function comparison() {
         isInWar = true;
         table.style.backgroundImage = "url(Images/camouflage_table.png)";
     }
-}
+};
 
 // Comparison cards in the war
 
@@ -222,7 +219,7 @@ function warcomparison() {
     } else {
         console.log("baaad");
     }
-}
+};
 
 // End of game and result
 
