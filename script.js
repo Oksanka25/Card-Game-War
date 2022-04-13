@@ -1,5 +1,3 @@
-let suits = ["♦️", "♥️", "♠️", "♣️"];
-const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
 let deck = [];
 let player1Stack = [];
 let player2Stack = [];
@@ -21,6 +19,11 @@ let playedCard1, playedCard2, player;
 let gameOn = true;
 let isInWar = false;
 let player1Turn = true;
+
+// Cards
+
+let suits = ["♦️", "♥️", "♠️", "♣️"];
+const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
 
 let myValues = {
     2: 2,
@@ -81,17 +84,17 @@ function splitDeck() {
     message.innerHTML = " Player 1, click on your stack to make a move"
 }
 
-//Music
+// Music
 
-function music() {
-    let gameMusic = new Audio("Music/game.mp3")
-    gameMusic.play();
-    gameMusic.loop = true;
-    gameMusic.playbackRate = 1;
-}
+// function music() {
+//     let gameMusic = new Audio("Music/game.mp3")
+//     gameMusic.play();
+//     gameMusic.loop = true;
+//     gameMusic.playbackRate = 1;
+// }
 
 
-//Main game - adding cards to the center and comparison
+// Main game - adding cards to the center and comparison
 
 stack1.addEventListener("click", () => {
     if (player1Turn === true) {
