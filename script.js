@@ -1,8 +1,4 @@
-let deck = [];
-let player1Stack = [];
-let player2Stack = [];
-let warPlayedCard1 = [];
-let warPlayedCard2 = [];
+// DOM elements
 const start = document.querySelector(".start");
 const reset = document.querySelector(".reset");
 const fullDeck = document.querySelector(".full-deck");
@@ -15,6 +11,12 @@ const table = document.querySelector(".table")
 const openBtn = document.getElementById("openModal");
 const modal = document.getElementById('modal');
 const closeBtn = document.getElementById('close');
+// Global variables
+let deck = [];
+let player1Stack = [];
+let player2Stack = [];
+let warPlayedCard1 = [];
+let warPlayedCard2 = [];
 let playedCard1, playedCard2, player;
 let gameOn = true;
 let isInWar = false;
@@ -22,7 +24,7 @@ let player1Turn = true;
 
 // Cards List
 
-let suits = ["♦️", "♥️", "♠️", "♣️"];
+const suits = ["♦️", "♥️", "♠️", "♣️"];
 const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
 
 let myValues = {
@@ -86,12 +88,12 @@ function splitDeck() {
 
 // Music
 
-// function music() {
-//     let gameMusic = new Audio("Music/game.mp3")
-//     gameMusic.play();
-//     gameMusic.loop = true;
-//     gameMusic.playbackRate = 1;
-// }
+function music() {
+    let gameMusic = new Audio("Music/game.mp3")
+    gameMusic.play();
+    gameMusic.loop = true;
+    gameMusic.playbackRate = 1;
+}
 
 
 // Main game - adding cards to the center and comparison
@@ -164,8 +166,7 @@ closeBtn.addEventListener("click", closeRules)
 start.addEventListener("click", () => {
     if (gameOn === true) {
         table.style.backgroundImage = "url(Images/green_table.png)";
-        // music();
-        shuffleDeck(); splitDeck();
+        music(); shuffleDeck(); splitDeck();
     } else {
         message.innerHTML = "The game has already started";
     }
