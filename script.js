@@ -164,7 +164,8 @@ closeBtn.addEventListener("click", closeRules)
 start.addEventListener("click", () => {
     if (gameOn === true) {
         table.style.backgroundImage = "url(Images/green_table.png)";
-        music(); shuffleDeck(); splitDeck();
+        // music();
+        shuffleDeck(); splitDeck();
     } else {
         message.innerHTML = "The game has already started";
     }
